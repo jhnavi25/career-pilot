@@ -195,7 +195,10 @@ function GradeBadge({ grade }) {
 }
 
 function SubjectPill({ subject }) {
-  const palette = subjectStyles[subject];
+  const palette = subjectStyles[subject] || {
+  background: "#4B5E52",
+  color: "#F5F0E8",
+};
 
   return (
     <span
