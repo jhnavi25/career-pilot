@@ -1,3 +1,4 @@
+
 /**
  * Main Application Component with Route-based Code Splitting
  * Implements lazy loading for improved performance

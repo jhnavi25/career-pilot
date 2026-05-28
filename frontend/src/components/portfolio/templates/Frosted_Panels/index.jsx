@@ -208,11 +208,11 @@ export default function FrostedPanels() {
       {/* 1. FLOATING FROSTED GLASS NAVBAR (bg-white/40, blur-2xl, border-white/50) */}
       {/* ========================================================================= */}
       <motion.header
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
-        >
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
+      >
         <nav className={`w-full max-w-6xl bg-white/20 backdrop-blur-2xl border-t border-l border-white/50 border-r border-b border-white/35 rounded-3xl shadow-[0_8px_32px_0_rgba(31,38,135,0.04)] px-6 py-3.5 flex items-center justify-between transition-all duration-500 relative group hover:bg-white/30 hover:border-white/50 hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.08)] ${scrolled ? 'bg-white/35 backdrop-blur-3xl shadow-xl' : ''}`}>
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-indigo-500/5 to-sky-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -309,8 +309,8 @@ export default function FrostedPanels() {
                     setMobileMenuOpen(false);
                   }}
                   className={`px-4 py-3 rounded-xl text-base font-bold transition-all flex items-center justify-between ${activeSection === link.id
-                      ? 'bg-gradient-to-r from-[#6366f1]/5 to-[#4f46e5]/5 border border-[#4f46e5]/10 text-[#4f46e5]'
-                      : 'text-[#5f6885] hover:text-[#1b1435] hover:bg-slate-50'
+                    ? 'bg-gradient-to-r from-[#6366f1]/5 to-[#4f46e5]/5 border border-[#4f46e5]/10 text-[#4f46e5]'
+                    : 'text-[#5f6885] hover:text-[#1b1435] hover:bg-slate-50'
                     }`}
                 >
                   <span>{link.label}</span>
@@ -337,7 +337,7 @@ export default function FrostedPanels() {
       {/* ========================================================================= */}
       <section
         id="home"
-        className="relative min-h-screen lg:h-screen lg:max-h-screen flex items-center pt-20 lg:pt-24 pb-8 px-6 max-w-6xl mx-auto z-10 lg:overflow-hidden scroll-mt-24 lg:scroll-mt-28"
+        className="relative min-h-screen lg:h-screen lg:max-h-screen flex items-center pt-32 lg:pt-24 pb-8 px-6 max-w-6xl mx-auto z-10 lg:overflow-hidden scroll-mt-24 lg:scroll-mt-28"
       >
         {/* Giant Typographic Background Watermark from Image 2 */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
@@ -347,7 +347,7 @@ export default function FrostedPanels() {
               WebkitTextStroke: '2px rgba(27, 20, 53, 0.35)',
               WebkitTextFillColor: 'transparent',
             }}
-          >
+          >``
             {data.personal.name}
           </span>
         </div>
@@ -433,7 +433,7 @@ export default function FrostedPanels() {
             >
               <div className="flex -space-x-2.5">
                 {[
-                  "https://images.unsplash.com/photo-1494790108755-2616b612b793?w=100&h=100&fit=crop&crop=face",
+                  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
                   "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
                   "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
                   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
@@ -462,7 +462,7 @@ export default function FrostedPanels() {
 
             {/* Centered Cards Stack with identical widths */}
             <div className="flex flex-col gap-4 w-full max-w-[370px] relative z-10">
-              
+
               {/* Card 1: Profile Panel */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -597,7 +597,7 @@ export default function FrostedPanels() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center w-full z-10">
 
           {/* Left Column: Overlapping Glass Panels */}
-          <div className="lg:col-span-5 relative flex items-center justify-center h-[350px] sm:h-[450px] w-full">
+          <div className="lg:col-span-5 relative flex items-center justify-center h-[380px] sm:h-[450px] w-full">
 
             {/* Primary Portrait Card (bg-white/30, blur-2xl, border border-white/50, shadow-xl, rounded-3xl) */}
             <motion.div
@@ -605,7 +605,7 @@ export default function FrostedPanels() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="absolute left-2 sm:left-0 bottom-4 w-[170px] sm:w-[280px] h-[220px] sm:h-[350px] bg-white/30 backdrop-blur-2xl border-t border-l border-white/50 border-r border-b border-white/35 rounded-3xl shadow-xl transition-all duration-300 hover:bg-white/35 hover:shadow-2xl p-3 overflow-hidden group/avatar z-20"
+              className="absolute left-2 sm:left-0 bottom-4 w-[170px] sm:w-[280px] h-[220px] sm:h-[350px] bg-white/30 backdrop-blur-2xl border-t border-l border-white/50 border-r border-b border-white/35 rounded-3xl shadow-xl transition-all duration-300 hover:bg-white/35 hover:shadow-2xl p-3 overflow-hidden group/avatar z-10 sm:z-20 hover:z-30"
             >
               <div className="w-full h-full rounded-2xl overflow-hidden relative">
                 <img
@@ -630,7 +630,7 @@ export default function FrostedPanels() {
               whileInView={{ opacity: 1, y: 0, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute right-2 sm:right-0 top-4 w-[130px] sm:w-[220px] h-[170px] sm:h-[280px] bg-white/30 backdrop-blur-2xl border-t border-l border-white/50 border-r border-b border-white/35 rounded-3xl shadow-xl transition-all duration-300 hover:bg-white/35 hover:shadow-2xl p-3 z-10 hover:z-30"
+              className="absolute right-2 sm:right-0 top-4 w-[130px] sm:w-[220px] h-[170px] sm:h-[280px] bg-white/30 backdrop-blur-2xl border-t border-l border-white/50 border-r border-b border-white/35 rounded-3xl shadow-xl transition-all duration-300 hover:bg-white/35 hover:shadow-2xl p-3 z-20 sm:z-10 hover:z-30"
             >
               <div className="w-full h-full rounded-2xl overflow-hidden relative bg-gradient-to-tr from-sky-200/50 via-indigo-100/50 to-indigo-100/50">
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.8),transparent_60%)] z-10" />
