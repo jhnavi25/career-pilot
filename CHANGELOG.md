@@ -1,3 +1,15 @@
+# [1.65.0](https://github.com/anurag3407/career-pilot/compare/v1.64.0...v1.65.0) (2026-05-28)
+
+
+### Bug Fixes
+
+* address bot review issues in Soft Neumorphic template ([2fee5ea](https://github.com/anurag3407/career-pilot/commit/2fee5ea432a435313cfe87ff228c460313be9ab0))
+
+
+### Features
+
+* implement complete Soft Neumorphic portfolio template ([43fd605](https://github.com/anurag3407/career-pilot/commit/43fd6054b1d69b74082331821a037e2bd338656b))
+
 # [1.64.0](https://github.com/anurag3407/career-pilot/compare/v1.63.0...v1.64.0) (2026-05-28)
 
 
