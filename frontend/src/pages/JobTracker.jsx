@@ -26,6 +26,7 @@ import {
   loadJobTrackerSnapshot,
   queueStatusUpdate,
   removeQueuedStatusUpdates,
+  saveJobTrackerStats,
   saveJobTrackerSnapshot,
 } from "../utils/jobTrackerOffline";
 
@@ -72,11 +73,11 @@ const JobTracker = () => {
       setIsOffline(!navigator.onLine);
     };
 
-    const handleOnline = () => {
+    const handleOnline = async () => {
       setIsOffline(false);
-      syncPendingStatusUpdates();
-      fetchJobs();
-      fetchStats();
+      await syncPendingStatusUpdates();
+      await fetchJobs();
+      await fetchStats();
     };
 
     const handleOffline = () => {
@@ -148,11 +149,8 @@ const JobTracker = () => {
     try {
       const data = await jobTrackerApi.getStats();
       setStats(data.stats);
-      const snapshot = loadJobTrackerSnapshot(currentUserId);
-      const jobsForSnapshot = trackedJobs.length
-        ? trackedJobs
-        : snapshot?.trackedJobs || [];
-      persistTrackerSnapshot(jobsForSnapshot, data.stats);
+      const snapshot = saveJobTrackerStats(currentUserId, data.stats);
+      setLastSyncedAt(snapshot.lastSyncedAt);
     } catch (error) {
       console.error("Error fetching stats:", error);
       const snapshot = loadJobTrackerSnapshot(currentUserId);
@@ -189,27 +187,36 @@ const JobTracker = () => {
     }
 
     const syncedIds = [];
+    const failedIds = [];
+    let stoppedForNetwork = false;
 
-    try {
-      for (const update of queuedUpdates) {
+    for (const update of queuedUpdates) {
+      try {
         await jobTrackerApi.updateStatus(update.jobId, update.status);
         syncedIds.push(update.id);
+      } catch (error) {
+        console.error("Error syncing offline job update:", error);
+        if (isNetworkError(error)) {
+          stoppedForNetwork = true;
+          break;
+        }
+        failedIds.push(update.id);
       }
+    }
 
-      const remainingUpdates = removeQueuedStatusUpdates(currentUserId, syncedIds);
-      setPendingSyncCount(remainingUpdates.length);
+    const removableIds = [...syncedIds, ...failedIds];
+    const remainingUpdates = removableIds.length
+      ? removeQueuedStatusUpdates(currentUserId, removableIds)
+      : queuedUpdates;
+
+    setPendingSyncCount(remainingUpdates.length);
+
+    if (failedIds.length) {
+      toast.error("Some offline updates could not be synced");
+    } else if (syncedIds.length && !stoppedForNetwork) {
       toast.success("Offline Job Tracker changes synced", {
         id: "tracked-job-offline-sync",
       });
-    } catch (error) {
-      console.error("Error syncing offline job updates:", error);
-      if (syncedIds.length) {
-        const remainingUpdates = removeQueuedStatusUpdates(currentUserId, syncedIds);
-        setPendingSyncCount(remainingUpdates.length);
-      }
-      if (!isNetworkError(error)) {
-        toast.error("Some offline updates could not be synced");
-      }
     }
   };
 
@@ -380,10 +387,10 @@ const JobTracker = () => {
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => {
-                    syncPendingStatusUpdates();
-                    fetchJobs();
-                    fetchStats();
+                  onClick={async () => {
+                    await syncPendingStatusUpdates();
+                    await fetchJobs();
+                    await fetchStats();
                   }}
                   disabled={isOffline}
                   className="shrink-0"

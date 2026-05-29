@@ -58,6 +58,19 @@ export function saveJobTrackerSnapshot(userId, trackedJobs = [], stats = null) {
   return snapshot;
 }
 
+export function saveJobTrackerStats(userId, stats = null) {
+  const previousSnapshot = loadJobTrackerSnapshot(userId);
+  const trackedJobs = previousSnapshot?.trackedJobs || [];
+  const snapshot = {
+    trackedJobs,
+    stats: stats || calculateJobStats(trackedJobs),
+    lastSyncedAt: new Date().toISOString(),
+  };
+
+  writeJson(scopedKey(SNAPSHOT_PREFIX, userId), snapshot);
+  return snapshot;
+}
+
 export function getQueuedStatusUpdates(userId) {
   return readJson(scopedKey(QUEUE_PREFIX, userId), []);
 }
