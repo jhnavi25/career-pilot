@@ -13,8 +13,8 @@ import WeatherMood from "../components/portfolio/templates/Weather_Mood/index";
 import SwissTypography from "../components/portfolio/templates/Swiss_Typography/index";
 import GeometricShapesHero from "../components/portfolio/templates/Geometric_Shapes/Hero";
 import LiquidGlass from "../components/portfolio/templates/Liquid_Glass/index";
-import PlayingCardsPortfolio from "../components/portfolio/templates/Playing_Cards/index";
-import CherryBlossom from "../components/portfolio/templates/Cherry_Blossom/index";
+import MidnightGradient from "../components/portfolio/templates/Midnight_Gradient/index";
+import PlayingCardsPortfolio from "../components/portfolio/templates/Playing_Cards";
 import Navbar from '../components/Navbar'
 import { X } from "lucide-react";
 // import Hero from "../components/portfolio/templates/Holographic/Hero";
@@ -470,6 +470,17 @@ export default function TemplateGallery() {
         </div>
       </div>
 
+      {/* Midnight Gradient */}
+      <div className="mt-12">
+        <div className="mb-4 flex items-center gap-3 px-1">
+          <span className="rounded-full bg-indigo-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-indigo-400 border border-indigo-500/30">
+            Preview
+          </span>
+          <h2 className="text-lg font-semibold text-foreground/70">Midnight Gradient Theme</h2>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-border">
+          <MidnightGradient />
+
       {/* Playing Cards Theme */}
       <div className="mt-12">
         <div className="mb-4 flex items-center gap-3 px-1">
@@ -480,6 +491,7 @@ export default function TemplateGallery() {
         </div>
         <div className="overflow-hidden rounded-2xl border border-emerald-500/20">
           <PlayingCardsPortfolio />
+          
         </div>
       </div>
 
