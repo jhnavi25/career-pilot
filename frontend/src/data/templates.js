@@ -1837,7 +1837,8 @@ export const templates = [
     "views": 1152,
     "rating": 4.5,
     "image": "/template-previews/Shadow_Layers.png",
-    "createdAt": "2026-05-01"
+    "createdAt": "2026-05-01",
+    "isComplete": true
   },
   {
     "id": "Silk_Flow",
@@ -1885,7 +1886,8 @@ export const templates = [
   "views": 1156,
   "rating": 4.5,
   "image": "/template-previews/Soft-Neumorphic.png",
-  "createdAt": "2026-05-01"
+  "createdAt": "2026-05-01",
+  "isComplete": true
 },
   {
     "id": "Solar_Eclipse",
@@ -2194,11 +2196,12 @@ export const templates = [
     "category": "Portfolio",
     "colorScheme": "Dark",
     "layout": "Grid",
-    "author": "System",
+    "author": "Akanhsa02code",
     "views": 1182,
     "rating": 4.5,
-    "image": "/template-previews/Type_Specimen.png",
-    "createdAt": "2026-05-01"
+    "image": "/template-previews/Type-Specimen.png",
+    "createdAt": "2026-05-01",
+    "isComplete": true
   },
   {
     "id": "Typewriter_Effect",
