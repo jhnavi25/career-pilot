@@ -91,6 +91,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import NorthernFjords from './components/portfolio/templates/Northern_Fjords';
 import RainforestCanopy from './components/portfolio/templates/Rainforest_Canopy/index.jsx';
 import SmokeMist from './components/portfolio/templates/Smoke_Mist/index.jsx';
+import MagneticDock from './components/portfolio/templates/Magnetic_Dock/index.jsx';
 import Hero from './components/portfolio/templates/Magazine_Editorial/Hero';
 import TestSocialLinks from './pages/TestSocialLinks';
 
@@ -240,6 +241,7 @@ function AppRoutes() {
         <Route path="/templates/rainforest-canopy" element={<RainforestCanopy />} />
         <Route path="/templates/northern-fjords" element={<NorthernFjords />} />
         <Route path="/templates/smoke-mist" element={<SmokeMist />} />
+        <Route path="/templates/magnetic-dock" element={<MagneticDock />} />
         
         {/* Core Protected Routes */}
         <Route 
