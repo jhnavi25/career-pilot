@@ -1,3 +1,15 @@
+# [1.126.0](https://github.com/anurag3407/career-pilot/compare/v1.125.0...v1.126.0) (2026-06-01)
+
+
+### Bug Fixes
+
+* improve Psychedelic Swirl mobile UX with responsive layouts ([180c618](https://github.com/anurag3407/career-pilot/commit/180c6187b5f1471e54dad5306dd9ce05ac9ea017))
+
+
+### Features
+
+* implement Psychedelic Swirl portfolio template (Retro/Nostalgic) ([2a6d12b](https://github.com/anurag3407/career-pilot/commit/2a6d12be62679007c906bba1f85ce98f0be47a94)), closes [#1947](https://github.com/anurag3407/career-pilot/issues/1947)
+
 # [1.125.0](https://github.com/anurag3407/career-pilot/compare/v1.124.0...v1.125.0) (2026-06-01)
 
 
