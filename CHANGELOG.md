@@ -1,3 +1,10 @@
+# [1.114.0](https://github.com/anurag3407/career-pilot/compare/v1.113.0...v1.114.0) (2026-06-01)
+
+
+### Features
+
+* add standalone portfolio renderer with template support ([a147683](https://github.com/anurag3407/career-pilot/commit/a147683029c9742df03a8feeb12fe4d9b48b2bc0))
+
 # [1.113.0](https://github.com/anurag3407/career-pilot/compare/v1.112.0...v1.113.0) (2026-06-01)
 
 
