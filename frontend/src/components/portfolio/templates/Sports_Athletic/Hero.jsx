@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Zap, Target, Trophy } from 'lucide-react';
 
 const S = {
   bg: '#0a0a0a',
   red: '#e11d48',
-  redDark: '#9f1239',
   white: '#f8fafc',
   muted: '#94a3b8',
   card: '#141414',
@@ -33,7 +32,7 @@ export default function Hero() {
   return (
     <section style={{ background: S.bg, minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
 
-      {/* Background diagonal speed lines */}
+      {/* Diagonal speed lines */}
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.04 }}>
         {[...Array(8)].map((_, i) => (
           <div key={i} style={{
@@ -45,7 +44,7 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Red accent glow */}
+      {/* Red glow */}
       <div style={{
         position: 'absolute', top: '-20%', right: '-10%',
         width: '600px', height: '600px', borderRadius: '50%',
@@ -55,23 +54,20 @@ export default function Hero() {
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.25rem' }}>
 
-        {/* Top badge */}
+        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           style={{ paddingTop: '5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '2rem' }}>
           <Zap size={14} color={S.red} fill={S.red} />
-          <span style={{
-            fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.25em',
-            textTransform: 'uppercase', color: S.red,
-          }}>
+          <span style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.25em', textTransform: 'uppercase', color: S.red }}>
             Elite Athlete Portfolio
           </span>
           <div style={{ flex: 1, height: '1px', background: `linear-gradient(90deg, ${S.red}40, transparent)` }} />
         </motion.div>
 
-        {/* Main headline */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }} className="lg:grid-cols-2">
+        {/* Fix #1: removed inline gridTemplateColumns so lg:grid-cols-2 takes effect */}
+        <div className="grid lg:grid-cols-2" style={{ gap: '3rem' }}>
           <div>
             <motion.div
               initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }}
@@ -81,17 +77,15 @@ export default function Hero() {
               </p>
 
               <h1 style={{
-                fontSize: 'clamp(3rem, 10vw, 6.5rem)',
-                fontWeight: 900, lineHeight: 0.9,
-                letterSpacing: '-0.03em', color: S.white,
+                fontSize: 'clamp(3rem, 10vw, 6.5rem)', fontWeight: 900,
+                lineHeight: 0.9, letterSpacing: '-0.03em', color: S.white,
                 textTransform: 'uppercase', marginBottom: '0.5rem',
               }}>
                 MARCUS
               </h1>
               <h1 style={{
-                fontSize: 'clamp(3rem, 10vw, 6.5rem)',
-                fontWeight: 900, lineHeight: 0.9,
-                letterSpacing: '-0.03em',
+                fontSize: 'clamp(3rem, 10vw, 6.5rem)', fontWeight: 900,
+                lineHeight: 0.9, letterSpacing: '-0.03em',
                 background: `linear-gradient(135deg, ${S.red}, ${S.gold})`,
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
                 textTransform: 'uppercase', marginBottom: '1.5rem',
@@ -99,29 +93,30 @@ export default function Hero() {
                 STONE
               </h1>
 
-              {/* Rotating sport label */}
+              {/* Fix #2: AnimatePresence wraps rotating sport label so exit animation runs */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
                 <div style={{ width: '3px', height: '28px', background: S.red, borderRadius: '2px' }} />
-                <motion.span
-                  key={sportIdx}
-                  initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  style={{
-                    fontSize: 'clamp(1rem, 3vw, 1.4rem)', fontWeight: 800,
-                    letterSpacing: '0.08em', color: S.muted, textTransform: 'uppercase',
-                  }}>
-                  {SPORTS[sportIdx]}
-                </motion.span>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={sportIdx}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      fontSize: 'clamp(1rem, 3vw, 1.4rem)', fontWeight: 800,
+                      letterSpacing: '0.08em', color: S.muted, textTransform: 'uppercase',
+                    }}>
+                    {SPORTS[sportIdx]}
+                  </motion.span>
+                </AnimatePresence>
               </div>
 
-              <p style={{
-                fontSize: '0.95rem', lineHeight: 1.8, color: S.muted, maxWidth: '440px', marginBottom: '2.5rem',
-              }}>
+              <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: S.muted, maxWidth: '440px', marginBottom: '2.5rem' }}>
                 Pushing human limits through discipline, speed, and precision. Representing excellence on
                 every field, every court, every track — from local arenas to world championships.
               </p>
 
-              {/* CTA buttons */}
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <motion.button
                   whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
@@ -147,24 +142,18 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Jersey number + icons side */}
+          {/* Right: jersey number + icon grid */}
           <motion.div
             initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.25 }}
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-
-            {/* Giant jersey number */}
             <div style={{
-              fontSize: 'clamp(8rem, 22vw, 18rem)',
-              fontWeight: 900, lineHeight: 1,
-              color: 'rgba(225,29,72,0.06)',
-              userSelect: 'none', letterSpacing: '-0.05em',
+              fontSize: 'clamp(8rem, 22vw, 18rem)', fontWeight: 900, lineHeight: 1,
+              color: 'rgba(225,29,72,0.06)', userSelect: 'none', letterSpacing: '-0.05em',
               position: 'absolute',
             }}>
               23
             </div>
-
-            {/* Icon grid */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', position: 'relative', zIndex: 2 }}>
               {[
                 { icon: <Trophy size={28} color={S.gold} />, label: 'Champion', sub: '3× World Title' },
@@ -172,8 +161,7 @@ export default function Hero() {
                 { icon: <Zap size={28} color={S.red} />, label: 'Speed', sub: '9.4s / 100m' },
                 { icon: <Trophy size={28} color={S.gold} />, label: 'MVP Awards', sub: '7 Seasons' },
               ].map((item, i) => (
-                <motion.div
-                  key={i}
+                <motion.div key={i}
                   initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + i * 0.08 }}
                   whileHover={{ y: -4, borderColor: S.red }}
@@ -192,20 +180,18 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Stats bar */}
+        {/* Fix #3: stats bar responsive — 2 cols on mobile, 4 on md+ */}
         <motion.div
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          style={{
-            marginTop: '4rem', marginBottom: '2rem',
-            display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
-            borderTop: `1px solid ${S.border}`, borderBottom: `1px solid ${S.border}`,
-          }}>
+          className="grid grid-cols-2 md:grid-cols-4"
+          style={{ marginTop: '4rem', marginBottom: '2rem', borderTop: `1px solid ${S.border}`, borderBottom: `1px solid ${S.border}` }}>
           {STATS.map((s, i) => (
             <div key={i} style={{
               padding: '1.5rem 1rem', textAlign: 'center',
-              borderRight: i < 3 ? `1px solid ${S.border}` : 'none',
-            }}>
+              borderRight: (i === 1 || i === 3) ? 'none' : `1px solid ${S.border}`,
+              borderBottom: i < 2 ? `1px solid ${S.border}` : 'none',
+            }} className="md:[border-right:1px_solid_#1e1e1e] md:[border-bottom:none]">
               <div style={{
                 fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', fontWeight: 900,
                 color: S.red, letterSpacing: '-0.02em', lineHeight: 1,
@@ -219,7 +205,6 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           animate={{ y: [0, 6, 0] }} transition={{ duration: 1.6, repeat: Infinity }}
           style={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem' }}>
