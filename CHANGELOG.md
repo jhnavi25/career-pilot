@@ -1,3 +1,10 @@
+## [1.133.1](https://github.com/anurag3407/career-pilot/compare/v1.133.0...v1.133.1) (2026-06-03)
+
+
+### Bug Fixes
+
+* **oled-black:** add external link targets, accessible SocialLink aria-label, guard testimonials for empty arrays ([fdf6e58](https://github.com/anurag3407/career-pilot/commit/fdf6e589c934ae8d957ca7c9a2f3b37ae7308364))
+
 # [1.133.0](https://github.com/anurag3407/career-pilot/compare/v1.132.0...v1.133.0) (2026-06-03)
 
 
