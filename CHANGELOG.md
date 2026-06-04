@@ -1,3 +1,15 @@
+# [1.148.0](https://github.com/anurag3407/career-pilot/compare/v1.147.0...v1.148.0) (2026-06-04)
+
+
+### Bug Fixes
+
+* update Medium Article template improvements ([1ae5355](https://github.com/anurag3407/career-pilot/commit/1ae53555f06e2fc28437b7c18c87f9469a497d64))
+
+
+### Features
+
+* add Medium Article portfolio template ([2e645c9](https://github.com/anurag3407/career-pilot/commit/2e645c9a9d0c3f93c242a58b8a351f5363c8defb))
+
 # [1.147.0](https://github.com/anurag3407/career-pilot/compare/v1.146.0...v1.147.0) (2026-06-04)
 
 
