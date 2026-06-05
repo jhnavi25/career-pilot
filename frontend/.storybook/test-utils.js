@@ -20,7 +20,10 @@ export const visualRegressionUtils = {
         return await testFn();
       } catch (error) {
         if (i === retries - 1) {
-          throw new Error(`Test failed after ${retries} retries: ${error.message}`);
+          throw new Error(
+            `Test failed after ${retries} retries: ${error.message}`,
+            { cause: error }
+          );
         }
         console.warn(`Retry attempt ${i + 1} of ${retries}`);
       }
@@ -35,4 +38,3 @@ export const visualRegressionUtils = {
     };
   },
 };
-

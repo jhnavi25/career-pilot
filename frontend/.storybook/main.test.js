@@ -59,11 +59,15 @@ describe('Visual Regression Testing - Core Logic', () => {
     it('should throw RangeError when retries is 0', async () => {
       const mockTest = vi.fn().mockResolvedValue('success');
       await expect(visualRegressionUtils.retryTest(mockTest, 0))
+        .rejects.toBeInstanceOf(RangeError);
+      await expect(visualRegressionUtils.retryTest(mockTest, 0))
         .rejects.toThrow('retries must be at least 1');
     });
 
     it('should throw RangeError when retries is negative', async () => {
       const mockTest = vi.fn().mockResolvedValue('success');
+      await expect(visualRegressionUtils.retryTest(mockTest, -1))
+        .rejects.toBeInstanceOf(RangeError);
       await expect(visualRegressionUtils.retryTest(mockTest, -1))
         .rejects.toThrow('retries must be at least 1');
     });
@@ -82,6 +86,7 @@ describe('Visual Regression Testing - Core Logic', () => {
       const config = visualRegressionUtils.getBaselineConfig();
       expect(config.threshold).toBe(0.2);
       expect(config.delay).toBe(300);
+      expect(config.diffThreshold).toBe(0.063);
     });
   });
 
