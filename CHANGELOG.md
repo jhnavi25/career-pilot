@@ -1,3 +1,18 @@
+# [1.174.0](https://github.com/anurag3407/career-pilot/compare/v1.173.0...v1.174.0) (2026-06-06)
+
+
+### Bug Fixes
+
+* resolve merge conflict with upstream main ([c93c199](https://github.com/anurag3407/career-pilot/commit/c93c19935290a9402aa165171db4bae98c51f27d))
+
+
+### Features
+
+* add portfolio analytics dashboard ([8d510b8](https://github.com/anurag3407/career-pilot/commit/8d510b87b986a06f9353b48143ee75abb5b0c4d9))
+* add resume improvement progress tracker ([3f1d779](https://github.com/anurag3407/career-pilot/commit/3f1d7791d9fcdbdbcc87432ee467f6842c6c2f80))
+* add resume PDF export customization options ([d33989c](https://github.com/anurag3407/career-pilot/commit/d33989c38fc6d266951e167c4796b070fc873b3e))
+* add smart resume section recommendations ([2c8e2df](https://github.com/anurag3407/career-pilot/commit/2c8e2df096deab015b6bae0d4d8b3735e9617066))
+
 # [1.173.0](https://github.com/anurag3407/career-pilot/compare/v1.172.0...v1.173.0) (2026-06-06)
 
 
