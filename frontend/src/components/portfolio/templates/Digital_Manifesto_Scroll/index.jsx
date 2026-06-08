@@ -602,7 +602,7 @@ export default function DigitalManifestoScroll({ portfolioData }) {
     if (typeof portfolioData.skills[0] === "string") {
       skills = portfolioData.skills.map((s, i) => ({
         name: s,
-        level: 75 + Math.floor(Math.random() * 20),
+        level: 75 + ((i * 13) % 20), // Deterministic pseudo-random 75-95%
         category: SKILL_CATS[i % SKILL_CATS.length],
       }));
     } else {
