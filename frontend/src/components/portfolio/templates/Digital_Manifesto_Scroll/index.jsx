@@ -5,6 +5,7 @@ import {
   ChevronDown, ChevronUp, Menu, X, GraduationCap, Award,
 } from "lucide-react";
 import dummyData from "../../../../data/dummy_data.json";
+import { usePortfolio } from "../../../../context/PortfolioContext";
 
 /* ─── Constants ─── */
 const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
@@ -572,7 +573,8 @@ function SkillBar({ name, level, delay = 0 }) {
 /* ═══════════════════════════════════════════════════════════
    Main Template Component
    ═══════════════════════════════════════════════════════════ */
-export default function DigitalManifestoScroll({ portfolioData }) {
+export default function DigitalManifestoScroll() {
+  const { portfolioData } = usePortfolio();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
@@ -960,10 +962,9 @@ export default function DigitalManifestoScroll({ portfolioData }) {
                     <Award size={20} className="dms-cert-icon" />
                     <div>
                       <div className="dms-cert-name">{cert.name || cert.title}</div>
-                      {(cert.issuer || cert.organization) && (
+                      {(cert.issuer || cert.organization || cert.year) && (
                         <div className="dms-cert-issuer">
-                          {cert.issuer || cert.organization}
-                          {cert.year && ` · ${cert.year}`}
+                          {[cert.issuer || cert.organization, cert.year].filter(Boolean).join(' · ')}
                         </div>
                       )}
                     </div>
