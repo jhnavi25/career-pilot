@@ -1,5 +1,5 @@
 import { ResumeConsistencyChecker } from '../utils/resumeChecker';
-import { ConsistencyPanel } from '../utils/ConsistencyPanel';
+import ConsistencyPanel from '../utils/ConsistencyPanel';
 import React, { useRef, useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
@@ -80,7 +80,7 @@ export default function ResumeBuilder() {
   const [resumeVersions, setResumeVersions] = useState([])
   const [selectedVersion, setSelectedVersion] = useState(null)
   
-
+  const [recommendedSkills, setRecommendedSkills] = useState([])
   useEffect(() => {
   const suggestions = []
   let score = 100
@@ -178,6 +178,10 @@ setRecommendedSkills(
   suggestions.slice(0, 4)
 )
 
+setRecommendedSkills(
+  suggestions.slice(0, 4)
+)
+
   const resumeText = `
     ${personal.summary}
     ${skills}
@@ -261,9 +265,6 @@ useEffect(() => {
       ...redundancyValidationErrors
     ];
   }, [experience, education, projects]);
-
-  // ─────────────────── Version Tracking State Control ───────────────────
-  const [resumeVersions, setResumeVersions] = React.useState([]);
 
   const saveVersion = React.useCallback(() => {
     const newVersion = {
