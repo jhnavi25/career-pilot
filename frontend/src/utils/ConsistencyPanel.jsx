@@ -19,7 +19,7 @@ export default function ConsistencyPanel({ errors = [] }) {
       className="mb-6 p-4 border border-border bg-card rounded-xl shadow-lg"
     >
       <div className="flex items-center gap-2 mb-3">
-        <span className="text-lg font-black bg-primary text-primary-foreground px-2 py-0.5 rounded uppercase tracking-tighter">
+        <span className="text-lg font-black bg-foreground text-background px-2 py-0.5 rounded uppercase tracking-tighter">
           Analysis // Flags ({errors.length})
         </span>
       </div>

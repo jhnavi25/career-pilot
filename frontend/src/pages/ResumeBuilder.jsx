@@ -1208,7 +1208,7 @@ useEffect(() => {
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold bg-clip-text text-transparent gradient-text">
+          <h1 className="text-3xl font-bold text-foreground">
             Resume Builder
           </h1>
           <p className="text-muted-foreground mt-2">Build a professional resume from scratch.</p>
@@ -1298,7 +1298,7 @@ useEffect(() => {
           ) : (
             <button
               onClick={handleNext}
-              className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/25 flex items-center gap-2 font-medium"
+              className="px-6 py-2.5 rounded-full bg-foreground text-background hover:bg-foreground/90 hover:scale-105 active:scale-95 transition-all shadow-lg flex items-center gap-2 font-medium"
             >
               Next <ArrowRight className="w-4 h-4" />
             </button>
