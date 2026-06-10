@@ -1,3 +1,10 @@
+# [1.211.0](https://github.com/anurag3407/career-pilot/compare/v1.210.0...v1.211.0) (2026-06-10)
+
+
+### Features
+
+* add Cloud Nine Aerial Skyscape portfolio template ([fe102a4](https://github.com/anurag3407/career-pilot/commit/fe102a41f5889bf7994c4ce3935b6a9baed76912))
+
 # [1.210.0](https://github.com/anurag3407/career-pilot/compare/v1.209.0...v1.210.0) (2026-06-10)
 
 
