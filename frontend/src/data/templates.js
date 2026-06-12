@@ -1,5 +1,18 @@
 export const templates = [
   {
+    "id": "IKEA_Assembly_Manual",
+    "title": "IKEA Assembly Manual",
+    "category": "Portfolio",
+    "colorScheme": "Light",
+    "layout": "Interactive",
+    "author": "System",
+    "views": 0,
+    "rating": 0,
+    "image": "/templates/IKEA_Assembly_Manual.png",
+    "createdAt": "2026-06-13",
+    "isComplete": true
+  },
+  {
     "id": "Fluid_Simulation_3D_WebGL",
     "title": "Fluid Simulation 3D WebGL",
     "category": "Portfolio",
