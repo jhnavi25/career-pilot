@@ -23,17 +23,19 @@ export const initializeSocket = (server) => {
   io.on('connection', async (socket) => {
     const initialTransport = socket.conn.transport.name;
 
-console.log(
-  `🔌 Socket connected using ${initialTransport}: ` +
-    `${socket.user.name} (${socket.user.uid})`
-);
-
-socket.conn.once('upgrade', (transport) => {
+if (process.env.NODE_ENV !== 'production') {
   console.log(
-    `⬆️ Socket transport upgraded from ${initialTransport} ` +
-      `to ${transport.name} for user ${socket.user.uid}`
+    `🔌 Socket connected using ${initialTransport} ` +
+      `(socketId=${socket.id})`
   );
-});
+
+  socket.conn.once('upgrade', (transport) => {
+    console.log(
+      `⬆️ Socket transport upgraded from ${initialTransport} ` +
+        `to ${transport.name} (socketId=${socket.id})`
+    );
+  });
+}
 
     // Track user presence
     try {
