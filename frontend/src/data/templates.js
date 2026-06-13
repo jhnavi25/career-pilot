@@ -17,6 +17,72 @@ export const templates = [
   {
   "id": "Vercel_Deploy",
   "title": "Vercel Deploy",
+  "category": "Portfolio",
+  "colorScheme": "Dark",
+  "layout": "Cards",
+  "author": "Your GitHub Username",
+  "views": 1200,
+  "rating": 4.8,
+  "image": "/template-previews/Vercel_Deploy.png",
+  "createdAt": "2026-06-05",
+  "isComplete": true
+},
+{
+  "id": "Virtual_Reality_Room_360",
+  "title": "Virtual Reality Room 360",
+  "category": "Portfolio",
+  "colorScheme": "Dark",
+  "layout": "Interactive",
+  "author": "ShaktiShrey-01",
+  "views": 0,
+  "rating": 0,
+  "image": "/template-previews/Virtual_Reality_Room_360.png",
+  "createdAt": "2026-06-12",
+  "isComplete": true
+},
+{
+  "id": "Forensic_Investigator_Desk",
+  "title": "Forensic Investigator Desk",
+  "category": "Portfolio",
+  "colorScheme": "Dark",
+  "layout": "Interactive",
+  "author": "ShaktiShrey-01",
+  "views": 0,
+  "rating": 0,
+  "image": "/template-previews/Forensic_investigator_desk.png",
+  "createdAt": "2026-06-11",
+  "isComplete": true
+},
+{
+  "id": "IKEA_Assembly_Manual",
+  "title": "IKEA Assembly Manual",
+  "category": "Portfolio",
+  "colorScheme": "Light",
+  "layout": "Interactive",
+  "author": "System",
+  "views": 0,
+  "rating": 0,
+  "image": "/templates/IKEA_Assembly_Manual.png",
+  "createdAt": "2026-06-13",
+  "isComplete": true
+},
+{
+  "id": "Endless_Runner_Minigame",
+  "title": "Endless Runner Minigame",
+  "category": "Portfolio",
+  "colorScheme": "Dark",
+  "layout": "Interactive",
+  "author": "ShaktiShrey-01",
+  "views": 0,
+  "rating": 0,
+  "image": "/template-previews/Endless_Runner_Minigame.png",
+  "createdAt": "2026-06-12",
+  "isComplete": true
+},
+
+  {
+  "id": "Vercel_Deploy",
+  "title": "Vercel Deploy",
 {
   "id": "Virtual_Reality_Room_360",
   "title": "Virtual Reality Room 360",
@@ -60,8 +126,7 @@ export const templates = [
     "image": "/template-previews/Endless_Runner_Minigame.png",
     "createdAt": "2026-06-12",
     isComplete: true
-}
-,
+},
   {
     "id": "Fluid_Simulation_3D_WebGL",
     "title": "Fluid Simulation 3D WebGL",
@@ -193,6 +258,12 @@ export const templates = [
     "createdAt": "2026-06-07",
     "isComplete": true
   },
+
+
+
+
+
+
   {
     "id": "Vercel_Deploy",
     "title": "Vercel Deploy",
