@@ -1,5 +1,178 @@
 export const templates = [
   {
+    id: "Sommelier_Wine_Cellar_Racks",
+    title: "Sommelier Wine Cellar Racks",
+    category: "Portfolio",
+    colorScheme: "Dark",
+    layout: "Interactive",
+    author: "System",
+    views: 999999,
+    rating: 5.0,
+    image: "/templates/Sommelier_Wine_Cellar_Racks.png",
+    createdAt: "2026-06-14",
+    isComplete: true
+  },
+  {
+    id: "Michelin_Star_Chef_Plating",
+    title: "Michelin Star Chef Plating",
+    category: "Portfolio",
+    colorScheme: "Dark",
+    layout: "Interactive",
+    author: "System",
+    views: 0,
+    rating: 5.0,
+    image: "/templates/Michelin_Star_Chef_Plating.png",
+    createdAt: "2026-06-14",
+    isComplete: true
+  },
+
+  {
+    "id": "Zen_Bamboo_Forest_Wind",
+    "title": "Zen Bamboo Forest Wind",
+    "category": "Portfolio",
+    "colorScheme": "Light",
+    "layout": "Scroll",
+    "author": "Anurag3407",
+    "views": 99999,
+    "rating": 5.0,
+    "image": "/templates/Zen_Bamboo_Forest_Wind.png",
+    "createdAt": "2026-06-14",
+    "isComplete": true
+  },
+  {
+    "id": "Cartographer_Antiquity_Map_Room",
+    "title": "Cartographer Antiquity Map Room",
+    "category": "Portfolio",
+    "colorScheme": "Light",
+    "layout": "Interactive",
+    "author": "Your Name",
+    "views": 9999,
+    "rating": 5.0,
+    "image": "/template-previews/Cartographer_Antiquity_Map_Room.png",
+    "createdAt": "2026-06-13",
+    "isComplete": true
+  },
+
+  {
+  id: "Physics_Engine_Gravity_Drop",
+  title: "Physics Engine Gravity Drop",
+  category: "Portfolio",
+  colorScheme: "Dark",
+  layout: "Interactive",
+  author: "Jainiksha Patel",
+  views: 0,
+  rating: 5.0,
+  image: "/template-previews/Physics_Engine_Gravity_Drop.png",
+  createdAt: "2026-06-13",
+  isComplete: true
+},
+
+  {
+  "id": "Vercel_Deploy",
+  "title": "Vercel Deploy",
+  "category": "Portfolio",
+  "colorScheme": "Dark",
+  "layout": "Cards",
+  "author": "Your GitHub Username",
+  "views": 1200,
+  "rating": 4.8,
+  "image": "/template-previews/Vercel_Deploy.png",
+  "createdAt": "2026-06-05",
+  "isComplete": true
+},
+{
+  "id": "Virtual_Reality_Room_360",
+  "title": "Virtual Reality Room 360",
+  "category": "Portfolio",
+  "colorScheme": "Dark",
+  "layout": "Interactive",
+  "author": "ShaktiShrey-01",
+  "views": 0,
+  "rating": 0,
+  "image": "/template-previews/Virtual_Reality_Room_360.png",
+  "createdAt": "2026-06-12",
+  "isComplete": true
+},
+{
+  "id": "Forensic_Investigator_Desk",
+  "title": "Forensic Investigator Desk",
+  "category": "Portfolio",
+  "colorScheme": "Dark",
+  "layout": "Interactive",
+  "author": "ShaktiShrey-01",
+  "views": 0,
+  "rating": 0,
+  "image": "/template-previews/Forensic_investigator_desk.png",
+  "createdAt": "2026-06-11",
+  "isComplete": true
+},
+{
+  "id": "IKEA_Assembly_Manual",
+  "title": "IKEA Assembly Manual",
+  "category": "Portfolio",
+  "colorScheme": "Light",
+  "layout": "Interactive",
+  "author": "System",
+  "views": 0,
+  "rating": 0,
+  "image": "/templates/IKEA_Assembly_Manual.png",
+  "createdAt": "2026-06-13",
+  "isComplete": true
+},
+{
+  "id": "Endless_Runner_Minigame",
+  "title": "Endless Runner Minigame",
+  "category": "Portfolio",
+  "colorScheme": "Dark",
+  "layout": "Interactive",
+  "author": "ShaktiShrey-01",
+  "views": 0,
+  "rating": 0,
+  "image": "/template-previews/Endless_Runner_Minigame.png",
+  "createdAt": "2026-06-12",
+  "isComplete": true
+},
+
+  {
+    "id": "Vercel_Deploy",
+    "title": "Vercel Deploy",
+    "category": "Portfolio",
+    "colorScheme": "Dark",
+    "layout": "Interactive",
+    "author": "System",
+    "views": 0,
+    "rating": 5.0,
+    "image": "/template-previews/Vercel_Deploy.png",
+    "createdAt": "2026-06-14",
+    "isComplete": true
+  },
+  {
+  "id": "Virtual_Reality_Room_360",
+  "title": "Virtual Reality Room 360",
+  "category": "Portfolio",
+  "colorScheme": "Dark",
+  "layout": "Interactive",
+  "author": "ShaktiShrey-01",
+  "views": 0,
+  "rating": 0,
+  "image": "/template-previews/Virtual_Reality_Room_360.png",
+  "createdAt": "2026-06-12",
+  "isComplete": true
+},
+  {
+    "id": "Forensic_Investigator_Desk",
+    "title": "Forensic Investigator Desk",
+    "category": "Portfolio",
+    "colorScheme": "Dark",
+    "layout": "Interactive",
+    "author": "ShaktiShrey-01",
+    "views": 0,
+    "rating": 0,
+    "image": "/template-previews/Forensic_investigator_desk.png",
+    "createdAt": "2026-06-11",
+    "isComplete": true
+  },
+  {
     "id": "IKEA_Assembly_Manual",
     "title": "IKEA Assembly Manual",
     "category": "Portfolio",
@@ -23,6 +196,19 @@ export const templates = [
     "rating": 0,
     "image": "/template-previews/Endless_Runner_Minigame.png",
     "createdAt": "2026-06-12",
+    "isComplete": true
+  },
+  {
+    "id": "Git_Commit_History_Tree",
+    "title": "Git Commit History Tree",
+    "category": "Portfolio",
+    "colorScheme": "Dark",
+    "layout": "Interactive",
+    "author": "Raman Kumar",
+    "views": 50000,
+    "rating": 5.0,
+    "image": "/template-previews/Git_Commit_History_Tree.png",
+    "createdAt": "2026-06-13",
     "isComplete": true
   },
   {
@@ -156,6 +342,12 @@ export const templates = [
     "createdAt": "2026-06-07",
     "isComplete": true
   },
+
+
+
+
+
+
   {
     "id": "Vercel_Deploy",
     "title": "Vercel Deploy",
@@ -533,7 +725,7 @@ export const templates = [
     "createdAt": "2026-05-31",
     "isComplete": true
   },
-
+  
   {
     id: "ZineCollage",
     title: "Zine Collage",
@@ -2704,6 +2896,21 @@ export const templates = [
     "createdAt": "2026-06-07",
     "isComplete": true
   },
+
+  {
+    id: "Accordion_Fold_Brochure",
+    title: "Accordion Fold Brochure",
+    category: "Portfolio",
+    colorScheme: "Light",
+    layout: "Brochure",
+    author: "virakshi",
+    views: 0,
+    rating: 4.5,
+    image: "/template-previews/Accordion_Fold_Brochure.png",
+    createdAt: "2026-06-13",
+    isComplete: true
+  },
+
   {
     "id": "Cloud_Nine_Aerial_Skyscape",
     "title": "Cloud Nine Aerial Skyscape",
@@ -2753,6 +2960,28 @@ export const templates = [
     "views": 3200,
     "rating": 5.0,
     "image": "/templates/Book_Page_Flip_3D_Render.png",
+    "createdAt": "2026-06-13",
+    "isComplete": true
+  },
+  {
+    "id": "Crossword_Puzzle_Word_Fill",
+    "title": "Crossword Puzzle Word Fill",
+    "category": "Portfolio",
+    "colorScheme": "Dark",
+    "layout": "Crossword_Puzzle_Word_Fill",
+    "author": "System",
+    "views": 1050,
+    "rating": 4.8,
+    "image": "/template-previews/crossword_puzzle_word_fill.png",
+    "id": "Autumn_Forest_Leaf_Fall",
+    "title": "Autumn Forest Leaf Fall",
+    "category": "Portfolio",
+    "colorScheme": "Dark",
+    "layout": "Interactive",
+    "author": "Antigravity",
+    "views": 0,
+    "rating": 0,
+    "image": "/templates/Autumn_Forest_Leaf_Fall.png",
     "createdAt": "2026-06-13",
     "isComplete": true
   }
