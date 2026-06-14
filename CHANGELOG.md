@@ -1,3 +1,10 @@
+## [1.239.2](https://github.com/anurag3407/career-pilot/compare/v1.239.1...v1.239.2) (2026-06-14)
+
+
+### Bug Fixes
+
+* **frontend:** restore mobile navigation and fix profile skeleton theme compatibility ([456195b](https://github.com/anurag3407/career-pilot/commit/456195bc2eeccc12a93bf28a30658c291974b9a6))
+
 ## [1.239.1](https://github.com/anurag3407/career-pilot/compare/v1.239.0...v1.239.1) (2026-06-14)
 
 
